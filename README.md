@@ -1,6 +1,9 @@
+<h1>Ai-Chief</h1>
 <p>
-    Ai-Chief is an AI-powered tool designed to assist users in cooking by providing recipes, ingredient lists, and calorie information for various dishes. With Ai-Chief, users can simply input the name of a dish, and the tool will provide step-by-step instructions on how to prepare it, list all the required ingredients, and calculate the approximate calorie content of the dish.
-  </p>
+  Ai-Chief is an AI-powered tool designed to assist users in cooking by providing recipes, ingredient lists, and calorie information for various dishes. With Ai-Chief, users can simply input the name of a dish, and the tool will provide step-by-step instructions on how to prepare it, list all the required ingredients, and calculate the approximate calorie content of the dish.
+</p>
+<img src="https://github.com/Mohamed-Hamdy/Ai-Chief/blob/master/Ai-Chief.png" alt="Project Image">
+
 
   <h2>Features</h2>
   <ul>
