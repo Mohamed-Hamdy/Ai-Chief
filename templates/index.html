@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ai Chief</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            background-color: #B0BEC5;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 100px
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .form-row {
+            align-items: center;
+        }
+
+        .navbar-brand {
+            padding: 0;
+        }
+
+        .navbar-brand img {
+            max-height: 100%;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">
+        <img style="width: 50px; height: 50px"
+             src="https://png.pngtree.com/png-vector/20240212/ourlarge/pngtree-creative-chief-logo-png-image_11738514.png"
+             alt="Logo">
+    </a>
+    <span class="navbar-text ml-auto">
+        Ai Chief
+    </span>
+</nav>
+<div class="container">
+    <div class="card col-lg-8">
+        <div class="card-body">
+            <h5>
+                <div class="card-header">Uploading Service</div>
+            </h5>
+            <form class="needs-validation" id="uploadForm" action="/Uploader" method="POST"
+                  enctype="multipart/form-data" novalidate>
+                <div class="form-row">
+                    <div class="col-md-6 mb-5 mr-auto">
+                        <label for="validationTooltip01">Example image input</label>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="validationTooltip01" name="file"
+                                   accept="image/*" required>
+                            <label class="custom-file-label" for="validationTooltip01">Choose file...</label>
+                        </div>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please choose an image file.
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="ml-auto">
+                        <button id="nextButton" class="btn btn-primary" type="submit" disabled>
+                            Next Step
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"
+                                  style="display: none;"></span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <span>&copy; 2024 Ai Chief</span>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('uploadForm').addEventListener('submit', function () {
+            // Show the spinner when the form is submitted
+            document.getElementById('nextButton').querySelector('.spinner-border').style.display = 'inline-block';
+            document.getElementById('nextButton').disabled = true; // Disable the button
+        });
+
+        // Listen for changes in the file input field
+        document.getElementById('validationTooltip01').addEventListener('change', function () {
+            var fileName = this.files[0].name;
+            var customFileLabel = document.querySelector('.custom-file-label');
+            customFileLabel.innerHTML = fileName;
+            document.getElementById('nextButton').disabled = !this.value;
+        });
+    });
+</script>
+</body>
+</html>
